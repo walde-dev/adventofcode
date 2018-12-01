@@ -73,10 +73,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         String[] input = readFile("2018\\src\\day1\\inputDay1.txt").split("\n");
-        int doubleFreq = 0, currFreq = 0, finalFreq = 0;
+        int finalFreq = 0, currFreq = 0, doubleFreq = 0;
         HashSet<Integer> reachedFreq = new HashSet<>();
 
-        while(finalFreq == 0){
+        while(doubleFreq == 0){
             for(String str : input){
                 int temp = Integer.valueOf(removeByIndex(str, 0));
 
@@ -87,19 +87,19 @@ public class Main {
 
 
                 if(reachedFreq.contains(currFreq)) {
-                    finalFreq = currFreq;
+                    doubleFreq = currFreq;
                     break;
                 }
 
                 reachedFreq.add(currFreq);
 
             }
-            if(doubleFreq == 0)
-                doubleFreq = currFreq;
+            if(finalFreq == 0)
+                finalFreq = currFreq;
         }
 
-        System.out.println("Final frequency: " + doubleFreq);
-        System.out.println("First frequency that occurs twice: " + finalFreq);
+        System.out.println("Final frequency: " + finalFreq);
+        System.out.println("First frequency that occurs twice: " + doubleFreq);
 
     }
 
