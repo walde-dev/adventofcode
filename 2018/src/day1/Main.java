@@ -73,7 +73,7 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        String[] input = readFile("inputDay1.txt").split("\n");
+        String[] input = readFile("2018\\src\\day1\\inputDay1.txt").split("\n");
         int finalFreq = 0, counter = 0, freq = 0;
         HashSet<Integer> set = new HashSet<>();
 
