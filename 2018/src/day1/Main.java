@@ -78,7 +78,7 @@ public class Main {
 
         while(doubleFreq == 0){
             for(String str : input){
-                int temp = Integer.valueOf(removeByIndex(str, 0));
+                int temp = Integer.valueOf(new StringBuilder(str).deleteCharAt(0).toString());
 
                 if(str.charAt(0) == '+')
                     currFreq += temp;
@@ -101,10 +101,6 @@ public class Main {
         System.out.println("Final frequency: " + finalFreq);
         System.out.println("First frequency that occurs twice: " + doubleFreq);
 
-    }
-
-    private static String removeByIndex(String str, int index) {
-        return new StringBuilder(str).deleteCharAt(index).toString();
     }
 
     static String readFile(String path) throws IOException {
