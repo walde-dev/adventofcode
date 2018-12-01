@@ -72,26 +72,30 @@ What is the first frequency your device reaches twice?
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        long startTime = System.nanoTime();
         String[] input = readFile("2018\\src\\day1\\inputDay1.txt").split("\n");
         int finalFreq = 0, currFreq = 0, doubleFreq = 0;
         HashSet<Integer> reachedFreq = new HashSet<>();
 
         while(doubleFreq == 0){
             for(String str : input){
-                currFreq += Integer.valueOf(str);
+                currFreq += Integer.parseInt(str.replace("\r", ""));
                 if(reachedFreq.contains(currFreq)) {
                     doubleFreq = currFreq;
                     break;
                 }
                 reachedFreq.add(currFreq);
-
             }
+
             if(finalFreq == 0)
                 finalFreq = currFreq;
-        }
 
+
+
+        }
         System.out.println("Final frequency: " + finalFreq);
         System.out.println("First frequency that occurs twice: " + doubleFreq);
+        System.out.print("Runtime: " + (System.nanoTime()-startTime) / 1000000 + "ms");
 
     }
 
