@@ -78,19 +78,11 @@ public class Main {
 
         while(doubleFreq == 0){
             for(String str : input){
-                int temp = Integer.valueOf(new StringBuilder(str).deleteCharAt(0).toString());
-
-                if(str.charAt(0) == '+')
-                    currFreq += temp;
-                else
-                    currFreq -= temp;
-
-
+                currFreq += Integer.valueOf(str);
                 if(reachedFreq.contains(currFreq)) {
                     doubleFreq = currFreq;
                     break;
                 }
-
                 reachedFreq.add(currFreq);
 
             }
