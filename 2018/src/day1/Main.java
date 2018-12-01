@@ -71,36 +71,35 @@ What is the first frequency your device reaches twice?
 
 public class Main {
 
-
     public static void main(String[] args) throws IOException {
         String[] input = readFile("2018\\src\\day1\\inputDay1.txt").split("\n");
-        int finalFreq = 0, counter = 0, freq = 0;
-        HashSet<Integer> set = new HashSet<>();
+        int doubleFreq = 0, currFreq = 0, finalFreq = 0;
+        HashSet<Integer> reachedFreq = new HashSet<>();
 
-        while(freq == 0){
+        while(finalFreq == 0){
             for(String str : input){
-                char op = str.charAt(0);
-                String temp = removeByIndex(str, 0);
+                int temp = Integer.valueOf(removeByIndex(str, 0));
 
-                if(op == '+'){
-                    counter += Integer.valueOf(temp);
-                }else{
-                    counter -= Integer.valueOf(temp);
-                }
+                if(str.charAt(0) == '+')
+                    currFreq += temp;
+                else
+                    currFreq -= temp;
 
-                if(set.contains(counter)) {
-                    freq = counter;
+
+                if(reachedFreq.contains(currFreq)) {
+                    finalFreq = currFreq;
                     break;
                 }
 
-                set.add(counter);
+                reachedFreq.add(currFreq);
 
             }
-            if(finalFreq == 0) finalFreq = counter;
+            if(doubleFreq == 0)
+                doubleFreq = currFreq;
         }
 
-        System.out.println("Final frequency: " + finalFreq);
-        System.out.println("First frequency that occurs twice: " + freq);
+        System.out.println("Final frequency: " + doubleFreq);
+        System.out.println("First frequency that occurs twice: " + finalFreq);
 
     }
 
