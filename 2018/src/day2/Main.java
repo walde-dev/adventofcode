@@ -9,6 +9,7 @@ import java.util.HashSet;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+        long kek = System.nanoTime();
         String[] input = readFile("2018\\src\\day2\\inputDay2.txt").split("\n");
 
         int doubles = 0, triples = 0;
@@ -23,8 +24,10 @@ public class Main {
                     }
                 }
                 if(nonSharedChars <= 1) System.out.println(input[i] + "  " + input[j]);
+
             }
         }
+
 
 
         for(String str : input){
@@ -51,6 +54,7 @@ public class Main {
         }
 
         System.out.println("Checksum: " + doubles + " * " + triples + " = " + doubles*triples);
+        System.out.println("Runtime: " + (System.nanoTime()-kek)/1000000 + "ms");
 
 
 
