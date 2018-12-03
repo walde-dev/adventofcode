@@ -24,9 +24,9 @@ public class Main {
         for(String str : input){
 
             String[] claim = str.replace(":", "")
-                                .replace("@", "")
-                                .replaceAll("  ", " ")
-                                .split(" ");
+                    .replace("@", "")
+                    .replaceAll("  ", " ")
+                    .split(" ");
 
             int id = Integer.valueOf(claim[0]);
 
@@ -44,6 +44,36 @@ public class Main {
 
 
         }
+
+
+        for(String str : input){
+
+            int counter = 0;
+
+            String[] claim = str.replace(":", "")
+                    .replace("@", "")
+                    .replaceAll("  ", " ")
+                    .split(" ");
+
+            int id = Integer.valueOf(claim[0]);
+
+            String[] coord = claim[1].split(",");
+            String[] size = claim[2].split("x");
+
+            for(int i = 0; i < Integer.valueOf(size[0]); i++){
+                for(int j = 0; j < Integer.valueOf(size[1]); j++){
+                    int x = Integer.valueOf(coord[0]);
+                    int y = Integer.valueOf(coord[1]);
+                    if(suit[x+i][y+j] == 1) counter++;
+                }
+            }
+
+            if(counter == Integer.valueOf(size[0])*Integer.valueOf(size[1])) System.out.println(id);
+
+        }
+
+
+
 
         int counter = 0;
         for(int i = 0; i < 1000; i++){
