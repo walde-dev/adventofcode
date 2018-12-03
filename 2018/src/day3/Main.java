@@ -1,25 +1,24 @@
 package day3;
 
-import sun.awt.Symbol;
+
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
 
 
 public class Main {
 
-    static Map<Integer, Integer> suit = new HashMap<>();
+    static int[][] suit = new int[1000][1000];
 
 
 
     public static void main(String[] args) throws IOException {
         String[] input = readFile("2018\\src\\day3\\inputDay3.txt").replaceAll("#", "").split("\n");
 
-        for(int i = 0; i < 999999; i++){
-            suit.put(i, 0);
-        }
+        long start = System.nanoTime();
+
+
 
 
         for(String str : input){
@@ -38,8 +37,7 @@ public class Main {
                 for(int j = 0; j < Integer.valueOf(size[1]); j++){
                     int x = Integer.valueOf(coord[0]);
                     int y = Integer.valueOf(coord[1]);
-                    int position = (x+i) + (y+j-1)*1000 - 1;
-                    suit.replace(position, suit.get(position)+1);
+                    suit[x+i][y+j] = suit[x+i][y+j]+1;
 
                 }
             }
@@ -48,11 +46,14 @@ public class Main {
         }
 
         int counter = 0;
-        for(int i = 0; i < 999999; i++){
-            if(suit.get(i) > 1) counter++;
+        for(int i = 0; i < 1000; i++){
+            for(int j = 0; j < 1000; j++){
+                if(suit[i][j] > 1) counter++;
+            }
         }
 
         System.out.println(counter);
+        System.out.println("Runtime: " + (System.nanoTime()-start) / 1000000 + "ms");
 
     }
 
