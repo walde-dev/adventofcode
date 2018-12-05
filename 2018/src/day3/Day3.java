@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-public class Main {
+public class Day3 {
 
     static int[][] suit = new int[1000][1000];
 

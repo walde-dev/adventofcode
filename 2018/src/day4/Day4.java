@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main {
+public class Day4 {
 
     static ArrayList<Guard> list = new ArrayList<>();
 

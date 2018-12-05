@@ -14,7 +14,7 @@ public class Guard{
     public Guard(int id, int minutesAsleep) {
         this.id = id;
         this.minutesAsleep = minutesAsleep;
-        Main.list.add(this);
+        Day4.list.add(this);
         for(int i = 0; i < 60; i++){
             minutes.put(i,0);
         }

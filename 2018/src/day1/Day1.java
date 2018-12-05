@@ -69,7 +69,7 @@ Here are other examples:
 What is the first frequency your device reaches twice?
  */
 
-public class Main {
+public class Day1 {
 
     public static void main(String[] args) throws IOException {
         long startTime = System.nanoTime();
