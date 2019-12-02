@@ -11,10 +11,11 @@ import java.util.Map;
 public class Day4 {
 
     static ArrayList<Guard> list = new ArrayList<>();
+    static final int day = 4;
 
 
     public static void main(String[] args) throws IOException {
-        String[] input = readFile("2018\\src\\day4\\inputDay4.txt").split("\n");
+        String[] input = readFile("2018\\src\\input\\inputDay" + day + ".txt").split("\n");
 
         input = sort(input);
 

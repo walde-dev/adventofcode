@@ -8,9 +8,11 @@ import java.util.HashSet;
 
 public class Day2 {
 
+    static final int day = 2;
+
     public static void main(String[] args) throws IOException {
         long kek = System.nanoTime();
-        String[] input = readFile("2018\\src\\day2\\inputDay2.txt").split("\n");
+        String[] input = readFile("2018\\src\\input\\inputDay" + day + ".txt").split("\n");
 
         int doubles = 0, triples = 0;
 

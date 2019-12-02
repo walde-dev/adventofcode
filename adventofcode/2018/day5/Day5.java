@@ -6,8 +6,10 @@ import java.nio.file.Paths;
 
 public class Day5 {
 
+    static final int day = 5;
+
     public static void main(String[] args) throws IOException {
-        String input = readFile("2018\\src\\day5\\inputDay5.txt").replace(" ", "").replace("\n", "").replace("\r", "");
+        String input = readFile("2018\\src\\input\\inputDay" + day + ".txt").replace(" ", "").replace("\n", "").replace("\r", "");
         for(int i = 0; i < input.length(); i++){
             if(input.length()==2){
                 char c = input.charAt(0);

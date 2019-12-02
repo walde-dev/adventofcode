@@ -9,9 +9,10 @@ import java.util.HashMap;
 public class Day6 {
 
     static HashMap<Integer, Point> points = new HashMap<>();
+    static final int day = 6;
 
     public static void main(String[] args) throws IOException {
-        String[] input = readFile("2018\\src\\day6\\inputDay6.txt").replace(" ","").split("\n");
+        String[] input = readFile("2018\\src\\input\\inputDay" + day + ".txt").replace(" ","").split("\n");
 
         int counter = 0, xMax = 0, yMax = 0;
 

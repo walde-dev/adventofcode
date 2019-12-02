@@ -71,9 +71,11 @@ What is the first frequency your device reaches twice?
 
 public class Day1 {
 
+    static final int day = 1;
+
     public static void main(String[] args) throws IOException {
         long startTime = System.nanoTime();
-        String[] input = readFile("2018\\src\\day1\\inputDay1.txt").split("\n");
+        String[] input = readFile("2018\\src\\input\\inputDay" + day + ".txt").split("\n");
         int finalFreq = 0, currFreq = 0, doubleFreq = 0;
         HashSet<Integer> reachedFreq = new HashSet<>();
 

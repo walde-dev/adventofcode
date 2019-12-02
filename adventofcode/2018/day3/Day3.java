@@ -10,11 +10,11 @@ import java.nio.file.Paths;
 public class Day3 {
 
     static int[][] suit = new int[1000][1000];
-
+    static final int day = 3;
 
 
     public static void main(String[] args) throws IOException {
-        String[] input = readFile("2018\\src\\day3\\inputDay3.txt").replaceAll("#", "").split("\n");
+        String[] input = readFile("2018\\src\\input\\inputDay" + day + ".txt").replaceAll("#", "").split("\n");
 
         long start = System.nanoTime();
 
