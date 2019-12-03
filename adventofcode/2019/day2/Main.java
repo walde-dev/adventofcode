@@ -70,7 +70,7 @@ public class Main {
 
         System.out.println("Integer at position [0]: " + input[0]);
         System.out.println("[Part 2] solution is: 100 * " + noun + " + " + verb + " = " + (100*noun+verb));
-        
+
         t.finish();
     }
 }
