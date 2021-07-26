@@ -10,6 +10,7 @@ valid_ecl_chars = ('amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth')
 print('Total number of passports: ' + str(len(input)))
 
 
+
 def check_passport(passport):
     attributes = passport.replace('\n', ' ').split(' ')
     for i in range(len(attributes)):
@@ -41,21 +42,21 @@ for passport in input:
         if curr_attr == 'byr':
             byr = int(attr.split(':')[1])
             if not max_byr >= byr >= min_byr:
-                print('Birth Year not valid ' + str(byr))
+                # print('Birth Year not valid ' + str(byr))
                 valid_passport = False
                 break
         # Check Issue Year
         elif curr_attr == 'iyr':
             iyr = int(attr.split(':')[1])
             if not max_iyr >= iyr >= min_iyr:
-                print('Issue Year not valid ' + str(iyr))
+                # print('Issue Year not valid ' + str(iyr))
                 valid_passport = False
                 break
         # Check Expiration Year
         elif curr_attr == 'eyr':
             eyr = int(attr.split(':')[1])
             if not max_eyr >= eyr >= min_eyr:
-                print('Expiration Year not valid ' + str(eyr))
+                # print('Expiration Year not valid ' + str(eyr))
                 valid_passport = False
                 break
         # Check Height
@@ -65,38 +66,38 @@ for passport in input:
             hgt_metric = hgt[-2:]
             if hgt_metric == 'cm':
                 if not max_hgt_cm >= hgt_val >= min_hgt_cm:
-                    print('Height not valid ' + str(hgt))
+                    # print('Height not valid ' + str(hgt))
                     valid_passport = False
                     break
             elif hgt_metric == 'in':
                 if not max_hgt_in >= hgt_val >= min_hgt_in:
-                    print('Height not valid ' + str(hgt))
+                    # print('Height not valid ' + str(hgt))
                     valid_passport = False
                     break
         # Check Hair Color
         elif curr_attr == 'hcl':
             hcl = attr.split(':')[1]
             if not (hcl[0] == '#'):
-                print('No # in Hair Color ' + str(hcl))
+                # print('No # in Hair Color ' + str(hcl))
                 valid_passport = False
                 break
             for char in hcl:
                 if char not in valid_hcl_chars:
-                    print('Hair Color not valid ' + str(hcl))
+                    # print('Hair Color not valid ' + str(hcl))
                     valid_passport = False
                     break
         # Check Eye Color
         elif curr_attr == 'ecl':
             ecl = attr.split(':')[1]
             if ecl not in valid_ecl_chars:
-                print('Eye Color not valid ' + str(ecl))
+                # print('Eye Color not valid ' + str(ecl))
                 valid_passport = False
                 break
         # Check Passport ID
         elif curr_attr == 'pid':
             pid = attr.split(':')[1]
             if len(pid) != 9:
-                print('Passport ID not valid ' + str(pid))
+                # print('Passport ID not valid ' + str(pid))
                 valid_passport = False
                 break
     if valid_passport:
